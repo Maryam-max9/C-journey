@@ -4,33 +4,36 @@
     {
         static void Main(string[] args)
         {
-            int num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0;
-            
-            int SumResult = num1 + num2 + num3 + num4 + num5;
-            int AverageResult = SumResult / 5;
-            int DividedBy = 5;
-            Console.WriteLine("Hi our game is all about you entering 5 numbers and i will calculate the Average and the Sum of them ");
-            Console.WriteLine("________________________________");
+            /*
+             * what type of loops we need to use depending on
+               the type of data we have? 
+             * i need to make the user to give me 5 inputs using a loop
+             * we are going to use for loop  or while loop
+            */
+            Console.WriteLine("hello beautiful enter 5 numbers: ");
+            double sum = 0;
+            bool IsValid = false;
+            while (!IsValid)
+            {
+                try
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
 
-            Console.WriteLine("Enter num1: ");
-            num1 = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter num2: ");
-            num2 = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter num3: "); 
-            num3 = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter num4: ");
-            num4 = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter num5: ");
-            num5 = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine($"The sum for the numbers is:{num1} + {num2} + {num3} + {num4} + {num5} = {SumResult}");
-            Console.WriteLine($"The Average for the numbers is:{SumResult} / {5} {AverageResult}");
-           
-          
+                        Console.WriteLine($"number {i + 1} is: ");
+                        double number = Convert.ToDouble(Console.ReadLine());
+                        sum += number;
+                        IsValid = true;
+                    }
+                    double average = sum / 5.0;
+                    Console.WriteLine($"Here is your summation result: {sum} ");
+                    Console.WriteLine($"\nthis is average result: {average} ");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("JUST NNNUMMBBEERRSSSS! ");
+                }
+            }
         }
     }
 }
